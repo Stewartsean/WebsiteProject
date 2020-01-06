@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+</head>
+<body>
+
+    <h1>Update Joke</h1>
+	<form action="#" th:action="@{/user/} + ${currentUser.id}" th:object="${user}" method="post">
+		<p>Name: <input type="text" th:field="*{fName}" th:placeholder="${currentUser.fName}" /></p>
+		<p>Content: <input type="text" th:field="*{lName}" th:placeholder="${currentUser.lName}" /></p>
+	    <p>Punch Line: <input type="text" th:field="*{age}" th:placeholder="${currentUser.age}"/></p>
+	    <p><input type="submit" value="Submit" /></p>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,60 @@
+body
+{
+	background-image: url('astronomybackground.jpg');
+	background-size: cover;
+}
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  position: fixed;
+  height: auto;
+  overflow: auto;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+ 
+ul.sidenav li a.active {
+  background-color: #;
+  color: white;
+}
+
+ul.sidenav li a:hover:not(.active) {
+  background-color: #241c97;
+  color: white;
+}
+
+div.content {
+  margin-left: 10%;
+  padding: 1px 16px;
+  height: 1000px;
+  color: White;
+}
+
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  ul.sidenav li a {
+    float: left;
+    padding: 15px;
+  }
+  
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  ul.sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	<title>todo</title>
+	</head>
+	<body>
+		<h1>Create User</h1>
+		<form action="#" th:action="@{/todo/new}" th:object="${todo}" method="post">
+			<p>title: <input type="text" th:field="*{title}" /></p>
+			<p>content: <input type="text" th:field="*{content}" /></p>
+		    <p>hrToComplete: <input type="text" th:field="*{hrToComplete}" /></p>
+		    <p><input type="submit" value="Submit" /></p>
+		</form>
+		
+	</body>
+</html> 

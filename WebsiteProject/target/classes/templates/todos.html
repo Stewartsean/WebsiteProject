@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<title>todos</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<ul class="sidenav">
+				<li><a class="active" href="/">Home</a></li>
+				<li><a href = "/about">About Me</a></li>
+			</ul>
+			<ul class = "list">
+				<li th:text = "${toDo.title}"></li>
+				<li th:text = "${toDo.content}"></li>
+				<li th:text = "${toDo.hrToComplete}"></li>
+			</ul>
+			
+			<form th:object="${todo}" th:action="@{/toDo/} + ${toDo.id}" th:method="delete">
+				<input type="submit" value="Delete todo">
+				<h6 class = "text">Use this button to remove the todo from my database</h6>
+			</form>
+			<form th:object="${todo}" th:action="@{/todo/} + ${toDo.id} + '/update'" th:method = "post">
+				<input type="submit" value="Update Todo">
+				<h6 class = "text">Use this button to update a todo in my database</h6>
+			</form>
+			<form action = "#" th:object="${todo}" th:action="@{/todo/new}" th:method = "post">
+				<input type="submit" value="Create Todo">
+				<h6 class = "text">Use this button to create a todo in my database</h6>
+			</form>
+		</div>
+	</body>
+</html>

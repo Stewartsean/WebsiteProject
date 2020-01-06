@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<title>todo</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<ul class="sidenav">
+				<li><a class="active" href="/">Home</a></li>
+				<li><a href = "/about">About Me</a></li>
+			</ul>
+			
+			<div class="content">
+					<h3>This page is a view connected to a database(MySQL) and consumes the JSON using thymeleaf and converts it into a list to be viewed.</h3>
+					<h4>Currently all created todos in my database are being shown. By clicking on a name brings up additional data.</h4>
+				<ul th:each="todo: ${todos}">
+					<a th:href="@{/todo/} + ${todo.id}">
+						<li><span>todo's title: </span><span th:text="${todo.title}"></span></li>
+					</a>
+				</ul>	
+				<a href = "/todo/newtodo">Click here to make a new todo</a>
+			</div>
+		</div>
+	</body>
+</html>
